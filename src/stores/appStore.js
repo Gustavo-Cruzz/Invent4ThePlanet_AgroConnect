@@ -2,10 +2,29 @@ import { defineStore } from 'pinia'
 import { ref } from 'vue'
 
 export const useAppStore = defineStore('app', () => {
-    const userType = ref(null) // 'produtor' or 'comprador'
+    // --- Auth state ---
+    const userType = ref(null) // 'produtor' | 'varejista' | 'beneficiador' | 'transportador'
     const userName = ref('')
     const userCnpj = ref('')
 
+    // RBAC preparation
+    const permissions = ref([])
+
+    const rolePermissions = {
+        produtor: ['dashboard', 'analise', 'fechamento', 'roteamento'],
+        varejista: ['dashboard', 'pedidos'],
+        beneficiador: ['dashboard', 'processamento'],
+        transportador: ['dashboard', 'roteamento', 'entregas'],
+    }
+
+    const mockNames = {
+        produtor: 'Fazenda São Jorge',
+        varejista: 'Supermercado Central',
+        beneficiador: 'Indústria AgroBrasil',
+        transportador: 'TransLog Express',
+    }
+
+    // --- Mock data (unchanged from original) ---
     const offers = ref([
         {
             id: 1,
@@ -96,22 +115,71 @@ export const useAppStore = defineStore('app', () => {
         ],
     })
 
+    // --- Beneficiador mock data ---
+    const processingData = ref({
+        batches: [
+            { id: 1, product: 'Tomate Italiano', origin: 'Fazenda São Jorge', quantity: 500, unit: 'kg', status: 'Em processamento', quality: 'A', date: '2026-03-15' },
+            { id: 2, product: 'Alface Crespa', origin: 'Sítio Vida Verde', quantity: 300, unit: 'caixa', status: 'Concluído', quality: 'A', date: '2026-03-12' },
+            { id: 3, product: 'Cenoura Orgânica', origin: 'Fazenda Esperança', quantity: 800, unit: 'kg', status: 'Aguardando', quality: 'B', date: '2026-03-18' },
+        ],
+        stats: { processed: 1200, pending: 800, rejected: 45, avgQuality: 94 },
+    })
+
+    // --- Transportador mock data ---
+    const deliveryData = ref({
+        activeDeliveries: [
+            { id: 1, product: 'Tomate Italiano', from: 'Fazenda São Jorge', to: 'Supermercado Central', distance: 12, status: 'Em trânsito', eta: '14:30', vehicle: 'Caminhão Refrigerado' },
+            { id: 2, product: 'Cenoura Orgânica', from: 'Sítio Vida Verde', to: 'Distribuidora Fartura', distance: 38, status: 'Aguardando coleta', eta: '16:00', vehicle: 'Van Refrigerada' },
+            { id: 3, product: 'Alface Crespa', from: 'Fazenda Esperança', to: 'Restaurante Boa Mesa', distance: 52, status: 'Entregue', eta: '--', vehicle: 'Caminhão Baú' },
+        ],
+        stats: { active: 2, completed: 15, totalKm: 487, avgRating: 4.8 },
+    })
+
+    // --- Actions ---
     function login(cnpj, type) {
         userCnpj.value = cnpj
         userType.value = type
-        userName.value = type === 'produtor' ? 'Fazenda São Jorge' : 'Supermercado Central'
+        userName.value = mockNames[type] || type
+        permissions.value = rolePermissions[type] || []
+
+        // Persist to localStorage
+        localStorage.setItem('fc_userType', type)
+        localStorage.setItem('fc_userName', userName.value)
+        localStorage.setItem('fc_userCnpj', cnpj)
     }
 
     function logout() {
         userType.value = null
         userName.value = ''
         userCnpj.value = ''
+        permissions.value = []
+
+        localStorage.removeItem('fc_userType')
+        localStorage.removeItem('fc_userName')
+        localStorage.removeItem('fc_userCnpj')
+    }
+
+    function restoreSession() {
+        const savedType = localStorage.getItem('fc_userType')
+        const savedName = localStorage.getItem('fc_userName')
+        const savedCnpj = localStorage.getItem('fc_userCnpj')
+        if (savedType) {
+            userType.value = savedType
+            userName.value = savedName || ''
+            userCnpj.value = savedCnpj || ''
+            permissions.value = rolePermissions[savedType] || []
+        }
+    }
+
+    function hasPermission(perm) {
+        return permissions.value.includes(perm)
     }
 
     return {
-        userType, userName, userCnpj,
+        userType, userName, userCnpj, permissions,
         offers, predictions, notifications,
         closingData, routeData,
-        login, logout,
+        processingData, deliveryData,
+        login, logout, restoreSession, hasPermission,
     }
 })

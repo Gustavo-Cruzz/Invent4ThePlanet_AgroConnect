@@ -1,8 +1,8 @@
-# 🌾 AgroConnect — Plataforma B2B de Comercialização Agrícola
+# 🌾 FoodConnect — Plataforma B2B de Comercialização Agrícola
 
 ## Conceito
 
-**AgroConnect** é um protótipo de plataforma B2B que conecta **produtores rurais** a **compradores** (mercados, restaurantes e distribuidores) por meio de um sistema inteligente de oferta futura, análise preditiva de demanda e roteamento logístico otimizado.
+**FoodConnect** é um protótipo de plataforma B2B que conecta **produtores rurais** a **compradores** (mercados, restaurantes e distribuidores) por meio de um sistema inteligente de oferta futura, análise preditiva de demanda e roteamento logístico otimizado.
 
 > **Proposta de valor central:** Transformar incerteza em previsibilidade.
 

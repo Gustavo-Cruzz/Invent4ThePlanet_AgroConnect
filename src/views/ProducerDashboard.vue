@@ -42,7 +42,7 @@
                 <label class="block text-sm font-medium text-gray-700 mb-1">Unidade</label>
                 <select v-model="form.unit" class="input-field">
                   <option>kg</option>
-                  <option>caixa</option>
+                  <option>Caixas</option>
                   <option>tonelada</option>
                   <option>unidade</option>
                 </select>
@@ -118,7 +118,7 @@
             <div class="text-xs text-gray-500 mt-1">Anúncios Ativos</div>
           </div>
           <div class="card text-center">
-            <div class="text-2xl font-bold text-accent-600">1.420</div>
+            <div class="text-2xl font-bold text-accent-600">110</div>
             <div class="text-xs text-gray-500 mt-1">Kg Reservados</div>
           </div>
           <div class="card text-center">
@@ -126,7 +126,7 @@
             <div class="text-xs text-gray-500 mt-1">Compradores</div>
           </div>
           <div class="card text-center">
-            <div class="text-2xl font-bold text-green-600">R$ 6.390</div>
+            <div class="text-2xl font-bold text-green-600">R$ 1.478</div>
             <div class="text-xs text-gray-500 mt-1">Receita Estimada</div>
           </div>
         </div>

@@ -35,7 +35,7 @@
             <circle r="18" fill="#15803d" filter="url(#shadow)"/>
             <circle r="12" fill="#22c55e"/>
             <text y="1" text-anchor="middle" fill="white" font-size="12" font-weight="bold">🏭</text>
-            <text y="40" text-anchor="middle" fill="#374151" font-size="11" font-weight="600">Fazenda São Jorge</text>
+            <text y="40" text-anchor="middle" fill="#374151" font-size="11" font-weight="600">Sítio São Jorge</text>
             <text y="54" text-anchor="middle" fill="#9ca3af" font-size="9">ORIGEM</text>
           </g>
 
@@ -44,7 +44,7 @@
             <circle r="14" fill="#2563eb" filter="url(#shadow)"/>
             <circle r="9" fill="#3b82f6"/>
             <text y="1" text-anchor="middle" fill="white" font-size="10" font-weight="bold">1</text>
-            <text y="-24" text-anchor="middle" fill="#374151" font-size="10" font-weight="600">Supermercado Central</text>
+            <text y="-24" text-anchor="middle" fill="#374151" font-size="10" font-weight="600">Quitanda do Bairro</text>
           </g>
 
           <!-- Stop 2 -->
@@ -52,7 +52,7 @@
             <circle r="14" fill="#2563eb" filter="url(#shadow)"/>
             <circle r="9" fill="#3b82f6"/>
             <text y="1" text-anchor="middle" fill="white" font-size="10" font-weight="bold">2</text>
-            <text y="30" text-anchor="middle" fill="#374151" font-size="10" font-weight="600">Distribuidora Fartura</text>
+            <text y="30" text-anchor="middle" fill="#374151" font-size="10" font-weight="600">Feira Orgânica</text>
           </g>
 
           <!-- Stop 3 -->
@@ -68,7 +68,7 @@
             <circle r="14" fill="#2563eb" filter="url(#shadow)"/>
             <circle r="9" fill="#3b82f6"/>
             <text y="1" text-anchor="middle" fill="white" font-size="10" font-weight="bold">4</text>
-            <text y="30" text-anchor="middle" fill="#374151" font-size="10" font-weight="600">Rest. Sabor Natural</text>
+            <text y="30" text-anchor="middle" fill="#374151" font-size="10" font-weight="600">Mercadinho Bom Preço</text>
           </g>
 
           <!-- Legend -->

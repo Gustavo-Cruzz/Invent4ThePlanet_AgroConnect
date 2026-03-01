@@ -1,10 +1,10 @@
 <template>
-  <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800 p-4">
+  <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-900 via-primary-800 to-green-900 p-4">
     <!-- Background decoration -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
-      <div class="absolute -top-24 -left-24 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl"></div>
-      <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-accent-400/10 rounded-full blur-3xl"></div>
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary-600/5 rounded-full blur-3xl"></div>
+      <div class="absolute -top-24 -left-24 w-96 h-96 bg-green-500/20 rounded-full blur-3xl"></div>
+      <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-primary-400/20 rounded-full blur-3xl"></div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-green-600/10 rounded-full blur-3xl"></div>
     </div>
 
     <div class="relative w-full max-w-lg">
@@ -14,7 +14,7 @@
           <span class="text-3xl font-bold text-white">A</span>
         </div>
         <h1 class="text-3xl font-bold text-white">FoodConnect</h1>
-        <p class="text-gray-400 mt-2 text-sm">Plataforma B2B de Comercialização Agrícola</p>
+        <p class="text-green-100/80 mt-2 text-sm">Plataforma B2B de Comercialização Agrícola</p>
       </div>
 
       <!-- Card -->
@@ -80,7 +80,7 @@
         </div>
       </div>
 
-      <p class="text-center text-gray-500 text-xs mt-6">
+      <p class="text-center text-green-200/60 text-xs mt-6">
         Protótipo ilustrativo — dados simulados
       </p>
     </div>

@@ -26,7 +26,7 @@
         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div>
             <h3 class="text-lg font-bold text-gray-800">Resultado da Análise</h3>
-            <p class="text-sm text-gray-500 mt-1">Produto: <span class="font-semibold text-gray-700">Tomate Italiano</span> — 2.000 kg</p>
+            <p class="text-sm text-gray-500 mt-1">Produto: <span class="font-semibold text-gray-700">Tomate Italiano</span> — 150 kg</p>
           </div>
           <div class="flex gap-4">
             <div class="text-center">
@@ -34,7 +34,7 @@
               <div class="text-xs text-gray-500">Compradores</div>
             </div>
             <div class="text-center">
-              <div class="text-2xl font-bold text-primary-600">1.200</div>
+              <div class="text-2xl font-bold text-primary-600">100</div>
               <div class="text-xs text-gray-500">Kg previstos</div>
             </div>
             <div class="text-center">
